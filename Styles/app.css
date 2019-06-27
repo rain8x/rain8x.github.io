@@ -325,6 +325,8 @@ li.moving {background: #f97100;}
     padding: 0px 10px;
     text-decoration: underline;
 }
+.edu-eng, .edu-cn {text-align: justify;}
+
 .code-skill, .other-skill {color: white;}
 .skill-block {margin: 20px auto;font-size: 18px;}
 .skill-item {margin-bottom: 20px;line-height: 16px;}
