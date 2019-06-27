@@ -1,0 +1,426 @@
+*{margin: 0; padding: 0;}
+html, body {
+    font-family: segeo ui;
+    overflow-x: hidden;
+}
+.banner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+.slides {
+    position: relative;
+    width: 100%;
+    height: 600px;
+    background: #191919;
+    perspective: 800px;
+}
+._1slide {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    visibility: hidden;
+}
+._1slide img {
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+}
+._1slide.active {opacity: 1; visibility: visible;}
+._1slide .text-1 {
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    color: white;
+}
+._1slide .text-11 {
+    top: -100%; font-size: 4em;
+    transition: 0.4s;
+    opacity: 0;
+    animation: s1-text1 1s forwards;
+}
+@-webkit-keyframes s1-text1 {
+    from { top: -100%; opacity: 0;}
+    to { top: 6%; opacity: 1;}
+}
+._1slide .text-12 {
+    top: 20%; font-size: 1.5em;
+    transition: 0.4s;
+    opacity: 0;
+    animation: text-12 1s forwards;
+}
+@-webkit-keyframes text-12 {
+    from {transform: scale(0); opacity: 0;}
+    to { transform: scale(1); opacity: 1;}
+}
+._1slide .text-13 {
+    position: absolute;
+    top: 40%;
+    font-size: 3em;
+    transition: 0.6s;
+    opacity: 0;
+    letter-spacing: 8px;
+    animation: text-13 1s forwards;
+}
+@-webkit-keyframes text-13 {
+    0% {opacity: 0;}
+    50% {letter-spacing: 25px; opacity: 1;}
+    100% {letter-spacing: 8px;  opacity: 1;}
+}
+._1slide .text-14 {
+    top: 50%;
+    font-size: 3em;
+    letter-spacing: 8px;
+    transition: 0.6s;
+    transform: translateX(100%);
+    opacity: 0;
+    animation: text-14 1s forwards;
+}
+@-webkit-keyframes text-14 {
+    0% {transform: translateX(100%); opacity: 0;}
+    100% {transform: translateX(0%); opacity: 1;}
+}
+.nut-s1 {
+    position: absolute;
+    top: 70%; left: 50%;
+    opacity: 0;
+    transform: translate(-50%);
+    text-align: center;
+    animation: nut-s1 1s forwards;
+}
+.nut-s1 button {
+    margin: 20px;
+    font-size: 1.5em;
+    color: white;
+}
+@-webkit-keyframes nut-s1 {
+    from {top: 100%; opacity: 0;}
+    to {top: 70%; opacity: 1;}
+}
+._1slide .text-11 {animation-delay: 1.2s;}
+._1slide .text-12 {animation-delay: 1.6s;}
+._1slide .text-13 {animation-delay: 2.5s;}
+._1slide .text-14 {animation-delay: 3s;}
+._1slide .nut-s1 {animation-delay: 2s;}
+
+/*CSS for Next and Prev buttons */
+._1slide.next-hide {
+    animation: next-hide 1s forwards;
+    transform-origin: 0% 0%;
+}
+@-webkit-keyframes next-hide {
+     0% {transform: rotateY(0deg);}
+    100% {transform: rotateY(45deg); visibility: hidden; opacity: 0;}
+}
+._1slide.next-show { animation: next-show 1s forwards; }
+@-webkit-keyframes next-show {
+    0% {transform: translateX(100%);}
+    100% {transform: translateX(0); visibility: visible; opacity: 1;}
+}
+._1slide.prev-hide { 
+    animation: prev-hide 1s forwards;
+    transform-origin: 100% 0%;}
+@-webkit-keyframes prev-hide {
+    0% {transform: rotateY(0);}
+    100% {transform: rotateY(-45deg); visibility: hidden; opacity: 0;}
+}
+._1slide.prev-show { animation: prev-show 1s forwards; }
+@-webkit-keyframes prev-show {
+    0% {transform: translateX(-100%); visibility: hidden; opacity: 0;}
+    100% {transform: translateX(0); visibility: visible; opacity: 1;}
+}
+/*CSS for BUTTONS */
+.buttons i {
+    cursor: pointer;
+    font-size: 50px;
+    color: white;
+    transition: 0.2s;
+}
+.buttons i:hover {color: orange;}
+.prev {
+    position: absolute;
+    top: 50%; left: 10px;
+    transform: translateY(-50%);
+}
+.next {
+    position: absolute;
+    top: 50%; right: 10px;
+    transform: translateY(-50%);
+}
+.circles {
+    position: absolute;
+    width: 100%;
+    height: auto;
+    bottom: 1%;
+    left: 46%;
+    z-index: 5;
+}
+.circles li {
+    list-style: none;
+    float: left;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background: white;
+    margin: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+    border: 2px solid #00acfa;
+}
+.circles li:hover { background: #f97100;}
+li.moving {background: #f97100;}
+
+/*CSS for social-links */
+.social-links {
+    position: fixed;
+    left: 1em;
+    bottom: 1em;
+    z-index: 100;
+}
+.social-links li {list-style-type: none;}
+.social-links a {
+    text-decoration: none;
+    display: inline-block;
+    margin: 3px auto;
+    font-size: 25px;
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    background: #ffc107a6;
+    border-radius: 5px;
+    color: #0000ffd9;
+    transition: 0.3s;
+}
+.social-links a:hover {color: white;background: #0000ffa3;}
+
+/*CSS for common class */
+.icon-line {
+    position: relative;
+    text-align: center;
+    margin: 25px auto;
+}
+.icon-line i {
+    position: relative;
+    width: 50px;
+    height: 50px;
+    line-height: 50px;
+    border-radius: 50%;
+    font-size: 30px;
+    border: 2px solid #4CAF50;
+    background: #9E9E9E;
+    color: white;
+    z-index: 5;
+}
+.icon-line:after {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 2px;
+    top: 50%;
+    background: #9E9E9E;
+    position: absolute;
+    z-index: 1;
+}
+.desc-eng, .desc-cn {font-size: 18px;line-height: 28px;}
+
+/*CSS MENU bar */
+.menu {
+    width: 100%;
+    height: auto;
+    background: #20333a;
+    transition: 0.5s;
+}
+.menu ul {display: flex;}
+.menu li {transition: 0.4s;justify-content: space-between;}
+.menu li a {
+    padding: 10px;
+    font-size: 17px;
+    text-align: center;
+    font-family: sans-serif;
+    color: #fff;
+    transition: 0.3s;
+}
+.menu ul:hover li a {
+    transform: scale(1.5);
+    opacity: 0.2;
+    filter: blur(5px);
+}
+.menu ul li a:hover {
+    transform: scale(1.5);
+    opacity: 1;
+    filter: blur(0);
+}
+/*Scroll MENU*/
+.menu.menu-fixed {
+    position: fixed;
+    height: 50px;
+    top: 0; left: 0;
+    z-index: 100;
+    background: #62463c;
+}
+.menu.menu-fixed li a {font-size: 17px;color: #ffa9a3;}
+
+/*CSS for ABOUT ME*/
+.about { width: 100%; background: #ececec;}
+.row_1 {text-align: center;}
+.row_2 {margin: 25px auto;display: flex;}
+.row_2 img {border-radius: 50%;}
+.row_21 {width: 32%;}
+.row_22 {width: 36%;padding: 25px;}
+.row_23 {width: 32%;}
+.left-info, .right-info {
+    text-align: right;
+    font-size: 22px;
+    line-height: 30px;
+    margin: 15px;
+    padding: 5px;
+}
+.right-info { text-align: left; }
+.lower {font-weight: bold;}
+
+/* CSS for EDUCATION & SKILLS */
+.education {}
+.edu-quote {color: white;}
+.edu-block {border-left: 2px solid #e0e0e0;padding: 5px 0;}
+.edu-content h3 {color: white;}
+.edu-item {
+    position: relative;
+    padding: 13px 15px 5px;
+    margin-left: 20px;
+    margin-bottom: 15px;
+    border-left: 2px solid #12ce73;
+    box-shadow: 0 0 3px 0 rgba(0,0,0,.2);
+    background: #e7ffef;
+}
+.edu-item:before {
+    content: "";
+    display: inline-block;
+    position: absolute;
+    top: 20px;left: -29px;
+    width: 12px;height: 12px;
+    border: 2px solid #2eca7f;
+    background-color: #fff;
+    border-radius: 10px;
+    z-index: 2;
+}
+.edu-item:after {
+    content: "";
+    display: inline-block;
+    position: absolute;
+    top: 25px;
+    left: -25px;
+    width: 25px;
+    height: 2px;
+    border-radius: 10px;
+    background-color: #2eca7f;
+    z-index: 1;
+}
+.item-period {display: inline-block; text-decoration: underline;}
+.item-desc {
+    display: inline-block;
+    border-left: 1px solid #e0e0e0;
+    margin-left: 5px;
+    padding: 0px 10px;
+    text-decoration: underline;
+}
+.code-skill, .other-skill {color: white;}
+.skill-block {margin: 20px auto;font-size: 18px;}
+.skill-item {margin-bottom: 20px;line-height: 16px;}
+/*CSS for WORK EXPRIENCE*/
+.experience {background: #607d8b29;}
+.exp-block {display: flex;}
+.left-block {width: 50%;border-right: 2px solid #384a5340;}
+.left-item {
+    text-align: right;
+    padding: 15px;
+    margin-right: 20px;
+    margin-bottom: 15px;
+    border-right: 2px solid #12ce73;
+    box-shadow: 0 0 3px 0 rgba(0,0,0,.2);
+    background: #e7ffef;
+}
+.job-period {font-weight: bold;font-size: 20px;}
+.job-comp {font-size: 18px;}
+.job-desc-eng {margin: 10px auto;font-size: 17px;}
+.job-desc-cn {font-size: 17px;}
+.right-block {width: 50%;}
+.right-item {
+    padding: 15px;
+    margin-left: 20px;
+    margin-bottom: 15px;
+    border-left: 2px solid #12ce73;
+    box-shadow: 0 0 3px 0 rgba(0,0,0,.2);
+    background: #e7ffef;
+}
+
+/* CSS for Contact*/
+.contact {width: 100%;height: auto;color: #cbff8e;}
+
+/* CSS for Footer*/
+.footer {background: #60453b; color: white;}
+.footer p {line-height: 15px;}
+.sub-text:after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: 23px;
+    transform: translateX(-50%);
+    width: 20%;
+    height: 2px;
+    background: white;
+}
+.go-up {
+    position: fixed;
+    right: 10px;
+    bottom: 10px;
+    font-size: 30px;
+    background: #8080805c;
+    color: #00e9ffde;
+    width: 40px;
+    height: 40px;
+    text-align: center;
+    line-height: 40px;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: 0.4s;
+    z-index: 100;
+}
+.go-up:hover {color: white;background: #0000ffa3;}
+
+/* CSS for Responsive*/
+/*min 992 for desktops*/
+@media only screen and (min-width: 992px) {}
+
+/* Medium devices (landscape tablets, 768px and up to 991px)
+   992px and up is automatic */
+@media only screen and (max-width: 991px) {} 
+/* Small devices (portrait tablets and large phones, 767px and down) */
+@media only screen and (max-width: 767px){
+    ._1slide .text-11 {font-size: 2.5em;}
+    ._1slide .text-12 {font-size: 1em;}
+    ._1slide .text-13  {font-size: 2em;}
+    ._1slide .text-14 {font-size: 2em;}
+    ._1slide .nut-s1 button {font-size: 1em;}
+    .title-en {font-size: 33px;}
+    .title-nc {font-size: 30px;}
+    .sub-title {text-align: center;font-size: 26px;}
+    .edu-item h4 {font-size: 21px;}
+    .edu-item h5 {font-size: 18px;}
+    .social-links li {float: left;}
+    .social-links a {margin: auto 5px;}
+    .left-block, .right-block {width: 100%;border-right: 0px;}
+    .left-item {text-align: center;border-right: 0;margin: 15px;}
+    .right-item {text-align: center;margin: 15px;border-left: 0;}
+    .row_21 {width: 100%;}
+    .row_22 {width: 100%;padding: 30px;}
+    .row_23 {width: 100%;}
+    .left-info, .right-info {text-align: center;}
+    .edu-block {border-left: 0;}
+    .edu-item {margin: 10px;border-left: 0;}
+    .edu-item:before {content:"";top: 0;left: 0;width: 0;height: 0;border: 0;}
+    .edu-item:after {content:"";top: 0;left: 0;width: 0;height: 0;}
+
+}
