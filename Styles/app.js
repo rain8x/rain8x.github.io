@@ -136,4 +136,21 @@ $(function() {
 			$('.menu').removeClass('menu-fixed');
 		}
 	});
+
+	// PORTFOLIO
+	$('.filter a').click(function(event) {
+		var view_images = $(this).data('my_images');
+		//console.log('XEM ANH',view_images);
+		var show_name = $(this).text();
+		$('.filter-name p').text(show_name);
+		$('.filter-img ul li').each(function() {
+			if ($(this).hasClass(view_images)) {
+				$(this).show(300);
+			}
+			else {
+				$(this).hide(300);
+			}
+		});
+		return false;
+	});
 });

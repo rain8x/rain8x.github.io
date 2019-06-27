@@ -230,8 +230,8 @@ li.moving {background: #f97100;}
 .menu {
     width: 100%;
     height: auto;
-    background: #20333a;
     transition: 0.5s;
+    background-image: linear-gradient(145deg, #282220,#600903, #181f4b);
 }
 .menu ul {display: flex;}
 .menu li {transition: 0.4s;justify-content: space-between;}
@@ -257,14 +257,14 @@ li.moving {background: #f97100;}
 .menu.menu-fixed {
     position: fixed;
     height: 50px;
-    top: 0; left: 0;
+    top: 0;
+    left: 0;
     z-index: 100;
-    background: #62463c;
+    background-image: linear-gradient(145deg, #255f7a,#04746a,#df8603b5, #026a0e);
 }
 .menu.menu-fixed li a {font-size: 17px;color: #ffa9a3;}
-
 /*CSS for ABOUT ME*/
-.about { width: 100%; background: #ececec;}
+.about {width: 100%;background-image: linear-gradient(to bottom, #ffc10745,#06de063d,#607d8b5c, #9e9e9e52);}
 .row_1 {text-align: center;}
 .row_2 {margin: 25px auto;display: flex;}
 .row_2 img {border-radius: 50%;}
@@ -280,7 +280,6 @@ li.moving {background: #f97100;}
 }
 .right-info { text-align: left; }
 .lower {font-weight: bold;}
-
 /* CSS for EDUCATION & SKILLS */
 .education {}
 .edu-quote {color: white;}
@@ -330,7 +329,7 @@ li.moving {background: #f97100;}
 .skill-block {margin: 20px auto;font-size: 18px;}
 .skill-item {margin-bottom: 20px;line-height: 16px;}
 /*CSS for WORK EXPRIENCE*/
-.experience {background: #607d8b29;}
+.experience {background-image: linear-gradient(-145deg, #fff,#8bc34a61, #5af46042);}
 .exp-block {display: flex;}
 .left-block {width: 50%;border-right: 2px solid #384a5340;}
 .left-item {
@@ -355,6 +354,40 @@ li.moving {background: #f97100;}
     box-shadow: 0 0 3px 0 rgba(0,0,0,.2);
     background: #e7ffef;
 }
+/* CSS for PORTFOLIO*/
+.portfolio {
+    background-image: linear-gradient(145deg, #ff9800a6,#ffff0099, #00bcd49c);
+}
+.filter {}
+.filter a {text-decoration: none; color: gray;}
+.filter-name {
+    width: 175px;
+    background: whitesmoke;
+    margin: auto;
+    border-radius: 5px;
+}
+.filter-name p {
+    font-size: 18px;
+    padding: 5px;
+    color: gray;
+    font-weight: bold;
+}
+
+.filter a:hover {color: gray;}
+.filter-img {
+    width: 100%;
+    margin: 20px auto;
+    justify-content: space-between;
+}
+.filter-img ul {}
+.filter-img li {
+    list-style-type: none;
+    width: 25%;
+    height: 200px;
+    float: left;
+    padding: 3px;
+}
+.filter-img img {width: 100%;height: 100%;}
 
 /* CSS for Contact*/
 .contact {width: 100%;height: auto;color: #cbff8e;}
@@ -396,7 +429,13 @@ li.moving {background: #f97100;}
 
 /* Medium devices (landscape tablets, 768px and up to 991px)
    992px and up is automatic */
-@media only screen and (max-width: 991px) {} 
+@media only screen and (max-width: 991px) {
+    .filter-img li {
+        width: 50%;
+        height: 230px;
+        padding: 5px;
+    }
+} 
 /* Small devices (portrait tablets and large phones, 767px and down) */
 @media only screen and (max-width: 767px){
     ._1slide .text-11 {font-size: 2.5em;}
@@ -422,5 +461,9 @@ li.moving {background: #f97100;}
     .edu-item {margin: 10px;border-left: 0;}
     .edu-item:before {content:"";top: 0;left: 0;width: 0;height: 0;border: 0;}
     .edu-item:after {content:"";top: 0;left: 0;width: 0;height: 0;}
-
+    .filter-img li {
+        width: 100%;
+        height: 300px;
+        padding: 10px 30px;
+    }
 }
