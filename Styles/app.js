@@ -40,6 +40,7 @@ $(function() {
 			});
 		}
 	});
+
 	// code for prev buttom
 	$('.prev').click(function(event) {
 		// clear autoSlide
@@ -118,7 +119,7 @@ $(function() {
 		event.preventDefault();
 		$('html').animate({scrollTop: x4}, 1000);
 	});
-	$('.menu ul li:nth-child(7) a').on('click', function() {
+	$('.menu ul li:nth-child(6) a').on('click', function() {
 		event.preventDefault();
 		$('html').animate({scrollTop: x6}, 1000);
 	});
