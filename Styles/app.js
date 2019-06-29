@@ -154,4 +154,7 @@ $(function() {
 		});
 		return false;
 	});
+
+	TweenMax.staggerFrom($('.filter-img li'),1,{top:150,opacity:0},0.3);
+
 });
