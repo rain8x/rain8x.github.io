@@ -354,6 +354,7 @@ li.moving {background: #f97100;}
     box-shadow: 0 0 3px 0 rgba(0,0,0,.2);
     background: #e7ffef;
 }
+.right-desc {text-align: justify;}
 /* CSS for PORTFOLIO*/
 .portfolio {background-image: linear-gradient(145deg, #ff9800a6,#ffff0099, #00bcd49c);}
 .filter button {margin: 5px;}
