@@ -380,8 +380,7 @@ li.moving {background: #f97100;}
 .filter-img li {
     position: relative;
     list-style-type: none;
-    width: 24%;
-    height: 200px;
+    width: 24%; height: 200px;
     overflow: hidden;
     float: left;
     margin: 0.5%;
